@@ -1,0 +1,94 @@
+import React from 'react'
+import styled from 'styled-components'
+//This import can be found on this site https://www.npmjs.com/package/typewriter-effect
+import Typewriter from 'typewriter-effect';
+import Button from './Button'
+
+//Title
+//text-transform: capilizes the first letter on every sentence
+//span: changes the case and font for everything
+//.text-1 : changes color for <span class= "text-1">
+const Title = styled.h2`
+font-size: ${props => props.theme.fontxxl};
+text-transform: capitalize;
+width: 80%;
+color: ${props => props.theme.text};
+align-self: flex-start;
+
+span{
+  text-transform: uppercase;
+  font-family: 'Akaya Telivigala', cursive;
+}
+.text-1{
+  color: blue;
+}
+.text-2{
+  color: orange;
+}
+.text-3{
+  color: green;
+}
+.text-4{
+  color: red;
+}
+`
+
+//SubTitle
+//font-weight: is for darkness/lightness of text
+//margin-bottom: used to recenter to the top
+//align-self: flex-start: used to make in line to the left 
+const SubTitle = styled.h3`
+font-size: ${props => props.theme.fontlg};
+text-transform: capitalize;
+color: ${props => `rgba(${props.theme.textRgba}, 0.6)`};
+font-weight: 600;
+margin-bottom: 1rem;
+width: 80%;
+align-self: flex-start;
+`
+
+//ButtonContainer
+//Not sure why but width changes nothing
+const ButtonContainer = styled.div`
+width: 80%;
+align-self: flex-start;
+`
+
+//1138
+const TypeWriterText = () => {
+  return (
+    <>
+      <Title>
+      Welcome to our WABT site.
+      <Typewriter
+        options={{
+          autoStart: true,
+          loop: true,
+        }}
+        onInit={(typewriter) => {
+          typewriter
+            .typeString(`<span class="text-1">Brewery Reviews.</span>`)
+            .pauseFor(2000)
+            .deleteAll()
+            .typeString(`<span class="text-2">Fashion Vlogs.</span>`)
+            .pauseFor(2000)
+            .deleteAll()
+            .typeString(`<span class="text-3">Golf Archive.</span>`)
+            .pauseFor(2000)
+            .deleteAll()
+            .typeString(`<span class="text-4">Cafe Ratings.</span>`)
+            .pauseFor(2000)
+            .deleteAll()
+            .start();
+        }}
+      />
+    </Title> 
+    <SubTitle> Want to stay updated? Register for out subsciption. Only email needed! </SubTitle>
+    <ButtonContainer>
+      <Button text ="Explore" link="#about" />
+    </ButtonContainer>
+    </>
+  );
+};
+
+export default TypeWriterText
