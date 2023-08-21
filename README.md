@@ -1,1 +1,1 @@
-This is a website in development for me and my friends interests. I plan on creating this to keep as a blog of our interests before. This was forked so that I can learn how to use React tools but will change over time into my own style. If you want to check the original site this is based on check out codebucks27! Their tutorial was a huge help in my learning process. 
+In Progress
