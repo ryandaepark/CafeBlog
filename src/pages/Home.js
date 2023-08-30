@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import TypeWriterText from '../TypeWriterText'
-import CoverVideo from '../CoverVideo'
-import RoundTextBlack from '../../assets/Rounded-Text-Black.png'
+import TypeWriterText from '../components/TypeWriterText'
+import CoverVideo from '../components/CoverVideo'
+import RoundTextBlack from '../assets/Rounded-Text-Black.png'
 
 //Section
 //min-height : This is calculating spacing per window size before scroll

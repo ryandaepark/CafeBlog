@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Accordion from '../Accordion'
+import Accordion from '../components/Accordion'
 
 //Section
 //First block

@@ -3,7 +3,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import React, { useRef } from 'react'
 import { useLayoutEffect } from 'react'
 import styled from 'styled-components'
-import DrawSvg from '../DrawSvg'
+import DrawSvg from '../components/DrawSvg'
 
 //Section
 //First block
