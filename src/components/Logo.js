@@ -5,8 +5,8 @@ import styled from 'styled-components'
 // This is to make the logo grow in size when hovered over it
 // STARTS @ transition to hover
 const LogoText = styled.h1`
-font-family: 'Akaya Telivigala', cursive;
-font-size: ${props => props.theme.fontxxxl};
+font-family: 'Cedarville Cursive', sans-serif;
+font-size: ${props => props.theme.fontxl};
 color: ${props => props.theme.text};
 
 transition: all 0.2s ease;
@@ -19,7 +19,7 @@ const Logo = () => {
   return (
     <LogoText>
         <Link to= "/">
-        WABT
+        CoffeeMe
         </Link>
     </LogoText>
   )

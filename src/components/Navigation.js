@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Button from "./Button";
+import { Link } from 'react-router-dom';
 
 const Section = styled.section`
 width: 100vw;
@@ -53,14 +54,20 @@ const Navigation = () => {
             <NavBar>
                 <Logo />
                 <Menu>
-                    <MenuItem>Home</MenuItem>
-                    <MenuItem>About</MenuItem>
-                    <MenuItem>Roadmap</MenuItem>
-                    <MenuItem>Showcase</MenuItem>
-                    <MenuItem>Team</MenuItem>
-                    <MenuItem>Faq</MenuItem>
+                    <Link to="/"> 
+                        <MenuItem>Home</MenuItem>
+                    </Link>
+
+                    <Link to="/cafes"> 
+                    <MenuItem>Cafes</MenuItem>
+                    </Link>
+
+                    <Link to="/aboutus"> 
+                    <MenuItem>About Us</MenuItem>
+                    </Link>
+
                 </Menu>
-                <Button text ="Connect Wallet" link="https://google.com" />
+                <Button text ="Login" link="https://google.com" />
 
             </NavBar>
         </Section>

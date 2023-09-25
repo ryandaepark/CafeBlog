@@ -9,8 +9,6 @@ import styled from 'styled-components'
 //hover::after : makes the button border grow as it is being shrunk 
 const Btn = styled.button`
 display: inline-block;
-background-color: ${props =>props.theme.text};
-color: ${props => props.theme.body};
 outline: none;
 order: none;
 
@@ -36,11 +34,6 @@ position: relative;
     height: 100%;
     border-radius: 50px;
     transition: all 0.2s ease;
-}
-
-&:hover::after{
-    transform: translate(-50%, -50%) scale(1);
-    padding: 0.3rem;
 }
 `
 

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
-import '@fontsource/akaya-telivigala';
-import '@fontsource-variable/sora';
+import '@fontsource/cedarville-cursive';
+import '@fontsource-variable/montserrat';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 body{
-    font-family: 'Sora Variable', sans-serif;
+    font-family: 'Montserrat Variable', sans-serif;
     overflow-x: hidden;
 }
 
