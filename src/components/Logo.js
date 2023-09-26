@@ -19,7 +19,7 @@ const Logo = () => {
   return (
     <LogoText>
         <Link to= "/">
-        CoffeeMe
+        BrewTime
         </Link>
     </LogoText>
   )

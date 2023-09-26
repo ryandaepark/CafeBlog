@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import '@fontsource/cedarville-cursive';
 import '@fontsource-variable/montserrat';
+import '@fontsource-variable/caveat'
 
 const GlobalStyles = createGlobalStyle`
 
@@ -24,4 +25,5 @@ a{
     text-decoration: none;
 }
 `
+
 export default GlobalStyles;

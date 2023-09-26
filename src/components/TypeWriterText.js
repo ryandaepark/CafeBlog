@@ -9,27 +9,15 @@ import Button from './Button'
 //span: changes the case and font for everything
 //.text-1 : changes color for <span class= "text-1">
 const Title = styled.h2`
-font-size: ${props => props.theme.fontxxl};
+font-family: 'Caveat Variable', sans-serif;
+font-size: ${props => props.theme.fontxxxl};
 text-transform: capitalize;
 width: 80%;
-color: ${props => props.theme.text};
 align-self: flex-start;
 
 span{
-  text-transform: uppercase;
-  font-family: 'Akaya Telivigala', cursive;
-}
-.text-1{
-  color: blue;
-}
-.text-2{
-  color: orange;
-}
-.text-3{
-  color: green;
-}
-.text-4{
-  color: red;
+  font-family: 'Caveat Variable', sans-serif;
+  color: black;
 }
 `
 
@@ -59,7 +47,7 @@ const TypeWriterText = () => {
   return (
     <>
       <Title>
-      Welcome to our WABT site.
+      Welcome to our cafe blog.
       <Typewriter
         options={{
           autoStart: true,
@@ -70,20 +58,14 @@ const TypeWriterText = () => {
             .typeString(`<span class="text-1">Brewery Reviews.</span>`)
             .pauseFor(2000)
             .deleteAll()
-            .typeString(`<span class="text-2">Fashion Vlogs.</span>`)
-            .pauseFor(2000)
-            .deleteAll()
-            .typeString(`<span class="text-3">Golf Archive.</span>`)
-            .pauseFor(2000)
-            .deleteAll()
-            .typeString(`<span class="text-4">Cafe Ratings.</span>`)
+            .typeString(`<span class="text-2">Cafe Reviews.</span>`)
             .pauseFor(2000)
             .deleteAll()
             .start();
         }}
       />
     </Title> 
-    <SubTitle> Want to stay updated? Register for out subsciption. Only email needed! </SubTitle>
+    <SubTitle> Want to stay updated? Make an accout with us today! </SubTitle>
     <ButtonContainer>
       <Button text ="Explore" link="#about" />
     </ButtonContainer>

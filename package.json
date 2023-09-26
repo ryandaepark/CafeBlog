@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource-variable/caveat": "^5.0.8",
     "@fontsource-variable/montserrat": "^5.0.9",
     "@fontsource-variable/sora": "^5.0.1",
     "@fontsource/akaya-telivigala": "^5.0.1",

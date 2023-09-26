@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components'
 import TypeWriterText from '../components/TypeWriterText'
 import CoverVideo from '../components/CoverVideo'
 import RoundTextBlack from '../assets/Rounded-Text-Black.png'
+import CoffeeBanner from '../RyanAssets/man-serving-cup-coffee.svg'
+
 
 //Section
 //min-height : This is calculating spacing per window size before scroll
@@ -93,13 +95,21 @@ color: ${props => props.theme.body};
 font-size: 1.5rem;
 `
 
+const ImageContainer = styled.span`
+top: 2rem;
+width: 70%;
+height: auto;
+padding-top: 1em;
+`
+
 //&#x2193 : This is the code for an arrow pointing down
 const Home = () => {
   return (
     <Section>
       <Container>
         <Box> <TypeWriterText /> </Box>
-        <Box> <CoverVideo /> </Box>
+        {/* <Box> <CoverVideo /> </Box> */}
+        <Box> <ImageContainer> <img src={CoffeeBanner} /> </ImageContainer> </Box>
 
         <Round>
         <Circle>

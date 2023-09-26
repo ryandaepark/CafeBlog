@@ -55,11 +55,15 @@ const Navigation = () => {
                 <Logo />
                 <Menu>
                     <Link to="/"> 
-                        <MenuItem>Home</MenuItem>
+                    <MenuItem>Home</MenuItem>
                     </Link>
 
                     <Link to="/cafes"> 
                     <MenuItem>Cafes</MenuItem>
+                    </Link>
+
+                    <Link to="/breweries"> 
+                    <MenuItem>Breweries</MenuItem>
                     </Link>
 
                     <Link to="/aboutus"> 
