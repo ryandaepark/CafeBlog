@@ -8,8 +8,6 @@ import img5 from '../assets/Nfts/bighead-4.svg';
 import img6 from '../assets/Nfts/bighead-8.svg';
 import img7 from '../assets/Nfts/bighead-6.svg';
 import img8 from '../assets/Nfts/bighead-3.svg';
-import img9 from '../assets/Nfts/bighead-8.svg';
-import img10 from '../assets/Nfts/bighead-9.svg';
 
 //Section
 //First block
@@ -111,7 +109,7 @@ const Cafes = () => {
   return (
     <Section>
       <Title> All Posts </Title>
-      <Container>
+      <div class="grid grid-cols-4 gap-4">
         <MemberComponent img={img1} name="Ry"  rating="5.0" description="Lead Dev" />
         <MemberComponent img={img2} name="JiJi" rating="5.0" description="Dev" />
         <MemberComponent img={img3} name="Ishi" rating="5.0" description="Youtuber" />
@@ -120,7 +118,7 @@ const Cafes = () => {
         <MemberComponent img={img6} name="Danyuck" rating="5.0" description="Dog Lover" />
         <MemberComponent img={img7} name="Ish" rating="5.0" description="Sports Enthusiast" />
         <MemberComponent img={img8} name="Sky" rating="5.0" description="Nail Tech" />
-      </Container>
+      </div>
     </Section>
   )
 }
