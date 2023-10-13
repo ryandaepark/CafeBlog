@@ -1,13 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import img1 from '../assets/Nfts/bighead-5.svg';
-import img2 from '../assets/Nfts/bighead-1.svg';
-import img3 from '../assets/Nfts/bighead-2.svg';
-import img4 from '../assets/Nfts/bighead.svg';
-import img5 from '../assets/Nfts/bighead-4.svg';
-import img6 from '../assets/Nfts/bighead-8.svg';
-import img7 from '../assets/Nfts/bighead-6.svg';
-import img8 from '../assets/Nfts/bighead-3.svg';
+import testing from '../RyanAssets/coffee_test.jpeg';
+import star from '../RyanAssets/star.jpg';
 
 //Section
 //First block
@@ -41,28 +35,28 @@ flex-wrap: wrap;
 
 //Item
 const Item = styled.div`
-padding: 2rem 0;
-margin: 2rem 1rem;
-position: relative;
+padding: .1rem auto;
+margin: 3rem 1rem;
+display: flex;
+align-items: center;
+justify-content: center;
 
 border: 2px solid;
 border-radius: 40px;
 
-&:hover{
+${'' /* &:hover{
   img{
     transform: translateY(-1rem) scale(1.05);
   }
-}
+} */}
 `
 
 //ImageContainer
 const ImageContainer = styled.div`
-width: 15rem;
+width: 55%;
 margin: 2rem 1rem;
-border: 2px solid;
 padding: 1rem;
 
-border-radius: 30px;
 cursor: pointer;
 
 img{
@@ -78,7 +72,6 @@ font-size: ${props => props.theme.fontlg};
 display: flex;
 align-items: center;
 justify-content: center;
-text-transform: uppercase;
 margin-top: 1rem;
 `
 
@@ -88,9 +81,23 @@ font-size: ${props => props.theme.fontmd};
 display: flex;
 align-items: center;
 justify-content: center;
-text-transform: capitalize;
 margin-top: 1rem;
 font-weight: 400;
+`
+
+//InfoContainer
+const InfoContainer = styled.div`
+width: 50%;
+height: 100%;
+padding-right: 1rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
+const Star = styled.div`
+width: 12%;
 `
 
 const MemberComponent = ({img, name=" ", rating=" ", description=" "}) => {
@@ -99,8 +106,13 @@ const MemberComponent = ({img, name=" ", rating=" ", description=" "}) => {
       <ImageContainer>
         <img src={img} alt={name} />
       </ImageContainer>
-      <Name>{name}: {rating}</Name>
-      <Position>{description}</Position>
+      <InfoContainer>
+        <Name>
+          {name} : {rating} <Star> <img src={star}/> </Star>
+        </Name>
+        <Position>{description}</Position>
+      </InfoContainer>
+      
     </Item>
   )
 }
@@ -109,15 +121,15 @@ const Cafes = () => {
   return (
     <Section>
       <Title> All Posts </Title>
-      <div class="grid grid-cols-4 gap-4">
-        <MemberComponent img={img1} name="Ry"  rating="5.0" description="Lead Dev" />
-        <MemberComponent img={img2} name="JiJi" rating="5.0" description="Dev" />
-        <MemberComponent img={img3} name="Ishi" rating="5.0" description="Youtuber" />
-        <MemberComponent img={img4} name="Matt" rating="5.0" description="Leader" />
-        <MemberComponent img={img5} name="Limey" rating="5.0" description="Model" />
-        <MemberComponent img={img6} name="Danyuck" rating="5.0" description="Dog Lover" />
-        <MemberComponent img={img7} name="Ish" rating="5.0" description="Sports Enthusiast" />
-        <MemberComponent img={img8} name="Sky" rating="5.0" description="Nail Tech" />
+      <div class="grid grid-cols-3 gap-3">
+        <MemberComponent img={testing} name="Cafe-1"  rating="5.0" description="Super cool cafe in orange county. The coffee was meh but the matcha was amazing. Would come here again" />
+        <MemberComponent img={testing} name="JiJi" rating="5.0" description="Dev" />
+        <MemberComponent img={testing} name="Matt" rating="5.0" description="Leader" />
+        <MemberComponent img={testing} name="Limey" rating="5.0" description="Model" />
+        <MemberComponent img={testing} name="Ishi" rating="5.0" description="Youtuber" />
+        <MemberComponent img={testing} name="Danyuck" rating="5.0" description="Dog Lover" />
+        <MemberComponent img={testing} name="Ish" rating="5.0" description="Sports Enthusiast" />
+        <MemberComponent img={testing} name="Sky" rating="5.0" description="Nail Tech" />
       </div>
     </Section>
   )
