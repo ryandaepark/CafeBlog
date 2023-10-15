@@ -18,6 +18,8 @@ import Footer from './components/Footer';
 import Cafes from './pages/Cafes';
 import Breweries from './pages/Breweries';
 import AboutUs from './pages/AboutUs';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 //Remove showcase
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <Route path= "/cafes" element={<Cafes />} />
         <Route path= "/breweries" element={<Breweries />} />
         <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
       </Routes>
       {/* <Home />
       <About />

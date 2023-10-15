@@ -43,9 +43,7 @@ cursor: pointer;
 &:hover::after{
     width: 100%;
 }
-
 `
-
 
 
 const Navigation = () => {
@@ -69,9 +67,17 @@ const Navigation = () => {
                     <Link to="/aboutus"> 
                     <MenuItem>About Us</MenuItem>
                     </Link>
-
                 </Menu>
-                <Button text ="Login" link="https://google.com" />
+                
+                <Menu>
+                    <Link to="/login"> 
+                    <MenuItem>Login</MenuItem>
+                    </Link>
+
+                    <Link to="/register"> 
+                    <MenuItem>Register</MenuItem>
+                    </Link>
+                </Menu>
 
             </NavBar>
         </Section>

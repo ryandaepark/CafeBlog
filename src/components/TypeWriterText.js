@@ -65,7 +65,7 @@ const TypeWriterText = () => {
         }}
       />
     </Title> 
-    <SubTitle> Want to stay updated? Make an accout with us today! </SubTitle>
+    <SubTitle> Want to stay updated? Make an account with us today! </SubTitle>
     <ButtonContainer>
       <Button text ="Explore" link="#about" />
     </ButtonContainer>
