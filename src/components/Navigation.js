@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "styled-components";
 import Logo from "./Logo";
 import Button from "./Button";
+import { React, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
 const Section = styled.section`
@@ -45,13 +45,25 @@ cursor: pointer;
 }
 `
 
-
 const Navigation = () => {
+    const [username, setUsername] = useState(null);
     useEffect(() => {
         fetch('http://localhost:4000/profile', {
             credentials: 'include',
-        })
+        }).then(response => {
+            response.json().then(userInfo => {
+                setUsername(userInfo.username);
+            });
+        });
     }, []);
+
+    function logout() {
+        fetch('http://localhost:4000/logout', {
+            credentials: 'include',
+            method: 'POST',
+        });
+        setUsername(null);
+    }
 
     return (
         <Section>
@@ -71,20 +83,28 @@ const Navigation = () => {
                     <MenuItem>About Us</MenuItem>
                     </Link>
                 </Menu>
-                
+
                 <Menu>
-                    <Link to="/login"> 
-                    <MenuItem>Login</MenuItem>
-                    </Link>
-                    <Link to="/register"> 
-                    <MenuItem>Register</MenuItem>
-                    </Link>
+                {username && (
+                    <>
+                        <a onClick={logout}> Logout</a>
+                    </>
+                )}
+                {!username && (
+                    <>
+                        <Link to="/login"> 
+                        <MenuItem>Login</MenuItem>
+                        </Link>
+                        <Link to="/register"> 
+                        <MenuItem>Register</MenuItem>
+                        </Link>
+                    </>
+                )}
+                    
                 </Menu>
 
             </NavBar>
         </Section>
-        
-
     )
 }
 

@@ -24,7 +24,7 @@ app.post('/register', async (req, res) => {
             username, 
             password:bcrypt.hashSync(password, salt),
         });
-        res.json(userDoc);
+        res.json(userDoc);  
     } catch(e) {
         console.log(e);
         res.statusMessage(400).json(e);
@@ -46,7 +46,15 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
-    res.json(req.cookies);
+    const {token} = req.cookies;
+    jwt.verify(token, secret, {}, (err,info) => {
+        if (err) throw err;
+        res.json(info);
+    });
 });
+
+app.post('/logout', (req, res) => {
+    res.cookie('token', '').json('ok');
+})
 
 app.listen(4000); 

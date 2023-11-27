@@ -1,7 +1,7 @@
-import React from 'react'
 import styled from 'styled-components'
 import testing from '../RyanAssets/coffee_test.jpeg';
 import star from '../RyanAssets/star.jpg';
+import { React } from "react";
 
 //Section
 //First block
@@ -121,6 +121,7 @@ const Cafes = () => {
   return (
     <Section>
       <Title> All Posts </Title>
+      <Link class = "flex justify-center" to = "create"> Create new post </Link>
       <div class="grid grid-cols-3 gap-3">
         <MemberComponent img={testing} name="Cafe-1"  rating="5.0" description="Super cool cafe in orange county. The coffee was meh but the matcha was amazing. Would come here again" />
         <MemberComponent img={testing} name="JiJi" rating="5.0" description="Dev" />
