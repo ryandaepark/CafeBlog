@@ -47,6 +47,12 @@ cursor: pointer;
 
 
 const Navigation = () => {
+    useEffect(() => {
+        fetch('http://localhost:4000/profile', {
+            credentials: 'include',
+        })
+    }, []);
+
     return (
         <Section>
             <NavBar>
@@ -55,15 +61,12 @@ const Navigation = () => {
                     <Link to="/"> 
                     <MenuItem>Home</MenuItem>
                     </Link>
-
                     <Link to="/cafes"> 
                     <MenuItem>Cafes</MenuItem>
                     </Link>
-
                     <Link to="/breweries"> 
                     <MenuItem>Breweries</MenuItem>
                     </Link>
-
                     <Link to="/aboutus"> 
                     <MenuItem>About Us</MenuItem>
                     </Link>
@@ -73,7 +76,6 @@ const Navigation = () => {
                     <Link to="/login"> 
                     <MenuItem>Login</MenuItem>
                     </Link>
-
                     <Link to="/register"> 
                     <MenuItem>Register</MenuItem>
                     </Link>
