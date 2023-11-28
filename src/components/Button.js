@@ -11,7 +11,8 @@ const Btn = styled.button`
 display: inline-block;
 outline: none;
 order: none;
-
+background-color: lightgrey;
+opacity: 0.8;
 font-size: ${props => props.theme.fontsm};
 padding: 0.9rem 2.3rem;
 border-radius: 50px;

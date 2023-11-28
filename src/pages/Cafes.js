@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import testing from '../RyanAssets/coffee_test.jpeg';
 import star from '../RyanAssets/star.jpg';
 import { React } from "react";
+import { Link } from 'react-router-dom';
 
 //Section
 //First block

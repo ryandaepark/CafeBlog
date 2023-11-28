@@ -59,7 +59,10 @@ const Login = () => {
     });
 
     if (response.ok) {
-      setRedirect(true);
+      response.json().then(userInfo => {
+        
+        setRedirect(true);
+      })
     } else {
       alert('wrong credentials');
     }

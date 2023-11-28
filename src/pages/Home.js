@@ -102,21 +102,17 @@ height: auto;
 padding-top: 1em;
 `
 
-//&#x2193 : This is the code for an arrow pointing down
 const Home = () => {
   return (
     <Section>
       <Container>
         <Box> <TypeWriterText /> </Box>
-        {/* <Box> <CoverVideo /> </Box> */}
-        <Box> <ImageContainer> <img src={CoffeeBanner} /> </ImageContainer> </Box>
 
-        <Round>
-        <Circle>
-          &#x2193;
-        </Circle>
-          <img src={RoundTextBlack} alr="NFT" />
-        </Round>
+        <Box> 
+          <ImageContainer> 
+            <img src={CoffeeBanner} /> 
+          </ImageContainer> 
+        </Box>
 
       </Container>
     </Section>

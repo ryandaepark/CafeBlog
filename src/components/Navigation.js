@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import Logo from "./Logo";
 import Button from "./Button";
-import { React, useEffect, useState } from "react";
+import { React, useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import { UserContext } from "./UserContext";
 
 const Section = styled.section`
 width: 100vw;
@@ -46,13 +47,13 @@ cursor: pointer;
 `
 
 const Navigation = () => {
-    const [username, setUsername] = useState(null);
+    const {setUserInfo, userInfo} = useContext(UserContext)
     useEffect(() => {
         fetch('http://localhost:4000/profile', {
             credentials: 'include',
         }).then(response => {
             response.json().then(userInfo => {
-                setUsername(userInfo.username);
+                setUserInfo(userInfo);
             });
         });
     }, []);
@@ -62,8 +63,10 @@ const Navigation = () => {
             credentials: 'include',
             method: 'POST',
         });
-        setUsername(null);
+        setUserInfo(null);
     }
+
+    const username = userInfo?.username;
 
     return (
         <Section>
@@ -87,7 +90,9 @@ const Navigation = () => {
                 <Menu>
                 {username && (
                     <>
-                        <a onClick={logout}> Logout</a>
+                        <a onClick={logout}> 
+                        <MenuItem>Logout</MenuItem>
+                        </a>
                     </>
                 )}
                 {!username && (

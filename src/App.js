@@ -20,32 +20,26 @@ import Breweries from './pages/Breweries';
 import AboutUs from './pages/AboutUs';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import { UserContextProvider } from './components/UserContext';
 
 //Remove showcase
 function App() {
   return (
     <>
-    <GlobalStyles />
+    <UserContextProvider>
+      <GlobalStyles />
       <ThemeProvider theme={light}>
-      <Navigation />
-
-     
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path= "/cafes" element={<Cafes />} />
-        <Route path= "/breweries" element={<Breweries />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-      </Routes>
-      {/* <Home />
-      <About />
-      <Roadmap />
-      <Team />
-      <Faq />
-      <Footer /> */}
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path= "/cafes" element={<Cafes />} />
+          <Route path= "/breweries" element={<Breweries />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
+        </Routes>
       </ThemeProvider>
+    </UserContextProvider>
     </>
   );
 }
