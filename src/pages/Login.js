@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import {Navigate} from 'react-router-dom'
+import { UserContext } from '../components/UserContext'
 
 const Title = styled.h1`
 font-size: ${(props) => props.theme.fontxl};
@@ -47,6 +48,7 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const {setUserInfo} = useContext(UserContext);
 
   async function login(ev) {
     ev.preventDefault();
@@ -60,7 +62,7 @@ const Login = () => {
 
     if (response.ok) {
       response.json().then(userInfo => {
-        
+        setUserInfo(userInfo);
         setRedirect(true);
       })
     } else {

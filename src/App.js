@@ -21,6 +21,7 @@ import AboutUs from './pages/AboutUs';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { UserContextProvider } from './components/UserContext';
+import CreatePost from './pages/CreatePost';
 
 //Remove showcase
 function App() {
@@ -37,6 +38,8 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/register" element={<Register/>} />
+          <Route path="/cafes/create" element={<CreatePost/>} />
+          <Route path="/breweries/create" element={<CreatePost/>} />
         </Routes>
       </ThemeProvider>
     </UserContextProvider>

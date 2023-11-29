@@ -10,6 +10,7 @@ import img7 from '../assets/Nfts/bighead-6.svg';
 import img8 from '../assets/Nfts/bighead-3.svg';
 import img9 from '../assets/Nfts/bighead-8.svg';
 import img10 from '../assets/Nfts/bighead-9.svg';
+import { Link } from 'react-router-dom';
 
 //Section
 //First block
@@ -112,6 +113,7 @@ const Breweries = () => {
   return (
     <Section>
       <Title> All Posts </Title>
+      <Link class = "flex justify-center" to = "create"> Create new post </Link>
       <Container>
         <MemberComponent img={img1} name="Ry" position="Lead Dev" />
         <MemberComponent img={img2} name="JiJi" position="Dev" />
