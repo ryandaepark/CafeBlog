@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill/'
 import 'react-quill/dist/quill.snow.css'
+import { Navigate, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -32,19 +33,24 @@ const CreatePost = () => {
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
+  const navigate = useNavigate();
 
-  function createNewPost(ev) {
+  async function createNewPost(ev) {
     const data = new FormData();
     data.set('title', title);
     data.set('summary', summary);
     data.set('content', content);
     data.set('file', files[0]);
     ev.preventDefault();
-    fetch('http://localhost:4000/post', {
+    const response = await fetch('http://localhost:4000/post', {
       method:'POST', 
       body: data,
     })
+    if (response.ok) {
+      navigate(-1)
+    }
   }
+
   return (    
     <>
 
