@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill/'
 import 'react-quill/dist/quill.snow.css'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Title = styled.h1`
