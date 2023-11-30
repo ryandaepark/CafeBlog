@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import testing from '../RyanAssets/coffee_test.jpeg';
 import star from '../RyanAssets/star.jpg';
-import { React } from "react";
+import { React, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 //Section
@@ -119,6 +119,14 @@ const MemberComponent = ({img, name=" ", rating=" ", description=" "}) => {
 }
 
 const Cafes = () => {
+  // useEffect(() => {
+  //   fetch('http://localhost:4000/post').then(response => {
+  //     response.json().then(posts => {
+  //       console.log(posts);
+  //     });
+  //   });
+  // }, []);
+
   return (
     <Section>
       <Title> All Posts </Title>

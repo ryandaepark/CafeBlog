@@ -73,15 +73,20 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
     const newPath = path + '.' + ext;
     fs.renameSync(path, newPath);
 
-    const {title, summary, content} = req.body;
+    const {title, summary, content, type} = req.body;
     const postDoc = await Post.create({
         title, 
         summary, 
         content, 
+        type,
         cover: newPath,
     });
 
     res.json(postDoc);
 });
+
+// app.get('/post', async (req, res) => {
+//     res.json(await Post.find());
+// });
 
 app.listen(4000); 

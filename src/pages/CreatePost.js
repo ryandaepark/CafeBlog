@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill/'
 import 'react-quill/dist/quill.snow.css'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -34,6 +34,12 @@ const CreatePost = () => {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  //String manipulation to get parent page name
+  const url = location.pathname;
+  const urlParts = url.split('/');
+  const postType = urlParts[urlParts.length - 2];
 
   async function createNewPost(ev) {
     const data = new FormData();
@@ -41,13 +47,16 @@ const CreatePost = () => {
     data.set('summary', summary);
     data.set('content', content);
     data.set('file', files[0]);
+    data.set('type', postType)
+
     ev.preventDefault();
     const response = await fetch('http://localhost:4000/post', {
       method:'POST', 
       body: data,
     })
+
     if (response.ok) {
-      navigate(-1)
+      navigate(-1);
     }
   }
 

@@ -6,6 +6,7 @@ const PostSchema = new Schema({
     summary: String, 
     content: String, 
     cover: String,
+    type: String,
 }, {
     timestamps: true,
 });
