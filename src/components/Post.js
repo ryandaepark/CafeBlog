@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import testing from '../RyanAssets/coffee_test.jpeg';
 import star from '../RyanAssets/star.jpg';
+import {formatISO9075} from "date-fns";
 
 //Item
 const Item = styled.div`
@@ -19,7 +20,7 @@ const ImageContainer = styled.div`
 width: 55%;
 margin: 2rem 1rem;
 padding: 1rem;
-
+min-height: 150px;
 cursor: pointer;
 
 img{
@@ -65,31 +66,32 @@ width: 12%;
 
 //img={testing} name="Cafe-1"  rating="5.0" description="Super cool cafe in orange county. The coffee was meh but the matcha was amazing. Would come here again" />
 
-//export default function Post({title, summary, cover, rating, content, createdAt}) {
-export default function Post ({img, name=" ", rating=" ", description=" "}) {
+export default function Post({title, summary, cover, rating, content, createdAt, author}) {
+//export default function Post ({img, name=" ", rating=" ", description=" "}) {
     return(
-    //   <Item>
-    //     <ImageContainer>
-    //       <img src={cover} />
-    //     </ImageContainer>
-    //     <InfoContainer>
-    //       <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
-    //       <time>{createdAt}</time>
-    //       <Position>{summary}</Position>
-    //     </InfoContainer>
+      <Item>
+        <ImageContainer>
+          <img src={cover} />
+        </ImageContainer>
+        <InfoContainer>
+          <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
+          <Position>{author.username}</Position>
+          <Position><time> {formatISO9075(new Date(createdAt))} </time></Position>
+          <Position>{summary}</Position>
+        </InfoContainer>
         
-    //   </Item>
+      </Item>
 
-    <Item>
-      <ImageContainer>
-        <img src={img} alt={name} />
-      </ImageContainer>
-      <InfoContainer>
-        <Name>
-          {name} : {rating} <Star> <img src={star}/> </Star>
-        </Name>
-        <Position>{description}</Position>
-      </InfoContainer>
-    </Item>
-    )
+    // <Item>
+    //   <ImageContainer>
+    //     <img src={img} alt={name} />
+    //   </ImageContainer>
+    //   <InfoContainer>
+    //     <Name>
+    //       {name} : {rating} <Star> <img src={star}/> </Star>
+    //     </Name>
+    //     <Position>{description}</Position>
+    //   </InfoContainer>
+    // </Item>
+    );
   }

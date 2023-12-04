@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import Post from '../components/Post'
 import testing from '../RyanAssets/coffee_test.jpeg';
@@ -119,10 +119,12 @@ width: 12%;
 // }
 
 const Cafes = () => {
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     fetch('http://localhost:4000/post').then(response => {
       response.json().then(posts => {
-        console.log(posts);
+        setPosts(posts);
       });
     });
   }, []);
@@ -132,7 +134,10 @@ const Cafes = () => {
       <Title> All Posts </Title>
       <Link class = "flex justify-center" to = "create"> Create new post </Link>
       <div class="grid grid-cols-3 gap-3">
-        <Post img={testing} name="Cafe-1"  rating="5.0" description="Super cool cafe in orange county. The coffee was meh but the matcha was amazing. Would come here again"/>
+        {posts.length > 0 && posts.map(post =>(
+          <Post {...post} />
+        ))}
+        {/* <Post img={testing} name="Cafe-1"  rating="5.0" description="Super cool cafe in orange county. The coffee was meh but the matcha was amazing. Would come here again"/> */}
         {/* <MemberComponent img={testing} name="JiJi" rating="5.0" description="Dev" />
         <MemberComponent img={testing} name="Matt" rating="5.0" description="Leader" />
         <MemberComponent img={testing} name="Limey" rating="5.0" description="Model" />
