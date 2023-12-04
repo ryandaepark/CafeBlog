@@ -18,6 +18,7 @@ const secret = 'aiqouwbe7823742b3dq9wnd10nd98wbdnomx';
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 //add the url here (not kept for security reasons)
 mongoose.connect();
@@ -87,14 +88,16 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
         });
         res.json(postDoc);
     });
-
-    
-
     res.json(postDoc);
 });
 
 app.get('/post', async (req, res) => {
-    res.json(await Post.find().populate('author', ['username']));
+    res.json(
+        await Post.find()
+            .populate('author', ['username'])
+            .sort({createdAt:-1})
+            .limit(30)
+    );
 });
 
 app.listen(4000); 

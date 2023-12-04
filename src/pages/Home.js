@@ -1,8 +1,6 @@
-import React from 'react'
+import { React } from "react";
 import styled, { keyframes } from 'styled-components'
 import TypeWriterText from '../components/TypeWriterText'
-import CoverVideo from '../components/CoverVideo'
-import RoundTextBlack from '../assets/Rounded-Text-Black.png'
 import CoffeeBanner from '../RyanAssets/man-serving-cup-coffee.svg'
 
 
