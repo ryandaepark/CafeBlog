@@ -1,7 +1,7 @@
 import { React } from "react";
 import styled, { keyframes } from 'styled-components'
 import TypeWriterText from '../components/TypeWriterText'
-import CoffeeBanner from '../RyanAssets/man-serving-cup-coffee.svg'
+import CoffeeBanner from '../RyanAssets/man-serving-cup-coffee.jpg'
 
 
 //Section
@@ -108,7 +108,7 @@ const Home = () => {
 
         <Box> 
           <ImageContainer> 
-            <img src={CoffeeBanner} /> 
+            <img src={CoffeeBanner} class="rounded-lg"/> 
           </ImageContainer> 
         </Box>
 

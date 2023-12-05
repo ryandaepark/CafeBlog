@@ -18,9 +18,7 @@ transition: all 0.2s ease;
 const Logo = () => {
   return (
     <LogoText>
-        <Link to= "/">
-        BrewTime
-        </Link>
+        <Link to= "/"> BrewTime </Link>
     </LogoText>
   )
 }

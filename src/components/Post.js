@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import star from '../RyanAssets/star.jpg';
 import {formatISO9075} from "date-fns";
+import { Link } from 'react-router-dom';
 
 //Item
 const Item = styled.div`
@@ -65,16 +66,18 @@ width: 12%;
 
 export default function Post({title, summary, cover, rating, content, createdAt, author}) {
     return(
-      <Item>
-        <ImageContainer>
-          <img src={'http://localhost:4000/' + cover} />
-        </ImageContainer>
-        <InfoContainer>
-          <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
-          <Position>{author.username}</Position>
-          <Position><time> {formatISO9075(new Date(createdAt))} </time></Position>
-          <Position>{summary}</Position>
-        </InfoContainer>
-      </Item>
+    <Link to={'/post/id'}>
+        <Item>
+            <ImageContainer>
+                <img class="rounded-lg" src={'http://localhost:4000/' + cover} />
+            </ImageContainer>
+            <InfoContainer>
+                <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
+                <Position>{author.username}</Position>
+                <Position><time> {formatISO9075(new Date(createdAt))} </time></Position>
+                <Position>{summary}</Position>
+            </InfoContainer>
+        </Item>
+    </Link>
     );
   }
