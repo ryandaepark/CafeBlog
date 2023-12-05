@@ -25,7 +25,7 @@ width: fit-content;
 
 const Breweries = () => {
   const [posts, setPosts] = useState([]);
-
+  
   useEffect(() => {
     fetch('http://localhost:4000/post').then(response => {
       response.json().then(posts => {
@@ -42,7 +42,7 @@ const Breweries = () => {
       <Link class = "flex justify-center" to = "create"> Create new post </Link>
       <div class="grid grid-cols-3 gap-3">
         {posts.length > 0 && breweries.map(brewery =>(
-            <Post {...brewery} />
+          <Post {...brewery} />
         ))}
       </div>
     </Section>

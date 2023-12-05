@@ -64,12 +64,13 @@ const Star = styled.div`
 width: 12%;
 `
 
-export default function Post({title, summary, cover, rating, content, createdAt, author}) {
+export default function Post({_id, type, title, summary, cover, rating, content, createdAt, author}) {
     return(
-    <Link to={'/post/id'}>
         <Item>
             <ImageContainer>
+            <Link to={`/post/${_id}`}>
                 <img class="rounded-lg" src={'http://localhost:4000/' + cover} />
+            </Link>
             </ImageContainer>
             <InfoContainer>
                 <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
@@ -78,6 +79,5 @@ export default function Post({title, summary, cover, rating, content, createdAt,
                 <Position>{summary}</Position>
             </InfoContainer>
         </Item>
-    </Link>
     );
   }
