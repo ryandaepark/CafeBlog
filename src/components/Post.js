@@ -73,7 +73,7 @@ export default function Post({_id, type, title, summary, cover, rating, content,
             </Link>
             </ImageContainer>
             <InfoContainer>
-                <Name> {title} : {rating} <Star> <img src={star}/> </Star> </Name>
+                <Name> {title} : {5} <Star> <img src={star}/> </Star> </Name>
                 <Position>{author.username}</Position>
                 <Position><time> {formatISO9075(new Date(createdAt))} </time></Position>
                 <Position>{summary}</Position>
