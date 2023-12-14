@@ -41,6 +41,7 @@ This is a full stack MERN project that was made to blog the cafes and breweries 
 <!-- GETTING STARTED -->
 ## Getting Started
 
+### Prerequisites
 These are the necessary npm packages that need to be downloaded.
 
 * npm
